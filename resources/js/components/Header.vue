@@ -3,7 +3,10 @@
         <div class="uk-navbar-center">
 
             <ul class="uk-navbar-nav">
-
+                <!--                class="uk-active"-->
+                <li v-for="link in links">
+                    <router-link  :to="link.href">{{ link.title }}</router-link>
+                </li>
             </ul>
 
         </div>
@@ -12,8 +15,6 @@
 
 <script>
 export default {
-    name: "Header",
-
     data() {
         return {
             links: [
@@ -32,7 +33,6 @@ export default {
             ]
         }
     }
-
 }
 </script>
 
