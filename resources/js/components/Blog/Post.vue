@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="uk-card-body">
-            <p>{{ body }}</p>
+            <p>{{ body }}  </p>
         </div>
         <div class="uk-card-footer">
             <a href="#" class="uk-button uk-button-text">Read more</a>
