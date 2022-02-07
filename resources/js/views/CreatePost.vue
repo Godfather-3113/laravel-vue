@@ -28,26 +28,26 @@
 </template>
 
 <script>
-    import axios from 'axios';
+import axios from 'axios';
 
-    export default {
-        components: {},
-        data: () => ({
-            form: {
-                title: "",
-                body: ""
-            },
-            loading: false,
-            error: false
-        }),
-        methods: {
-            store() {
-                this.loading = true;
-                axios.post('/api/posts', this.form, {
-                    headers: {
-                        "Content-type": "application/json"
-                    }
-                })
+export default {
+    components: {},
+    data: () => ({
+        form: {
+            title: "",
+            body: ""
+        },
+        loading: false,
+        error: false
+    }),
+    methods: {
+        store() {
+            this.loading = true;
+            axios.post('/api/posts', this.form, {
+                headers: {
+                    "Content-type": "application/json"
+                }
+            })
                 .then(res => {
                     if (res.data.status) {
                         this.$router.push('/post/' + res.data.post.id);
@@ -58,9 +58,9 @@
                         this.error = true;
                     }
                 })
-            }
         }
     }
+}
 </script>
 
 <style scoped>

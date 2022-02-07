@@ -1,12 +1,12 @@
 <template>
     <div>
         <spin v-if="loading"/>
-        <div v-else-if="!loading && !not_found">
-            <h1>{{ post.title }} <span class="uk-badge">{{ post.created_at }}</span></h1>
-            <p class="uk-text-lead">{{ post.body }}</p>
+        <div v-else-if="!loading &&  !not_found">
+            <h1>{{ post.title }} <span class ="uk-badge">{{ post.created_at }}</span></h1>
+            <p class ="uk-text-lead">{{ post.body }}</p>
         </div>
-        <div uk-alert v-if="not_found">
-            <a class="uk-alert-close" uk-close></a>
+        <div uk-alert-warning v-if="not_found">
+            <a class ="uk-alert-close uk-alert-warning" ></a>
             <h3>404 пост не найден</h3>
         </div>
     </div>
@@ -33,7 +33,7 @@ export default {
             axios.get('/api/posts/' + id)
                 .then(res => {
                     this.post = res.data;
-                    setTimeout(()=> {
+                    setTimeout(() => {
                         this.loading = false;
                     }, 500);
                 })

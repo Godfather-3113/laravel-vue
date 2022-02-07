@@ -5,7 +5,7 @@ Vue.use(vueRouter);
 
 import Index from "./views/Index";
 import Blog from "./views/Blog";
-import Post from "./components/Blog/Post";
+import Post from "./views/Post";
 import CreatePost from "./views/CreatePost";
 
 const routes = [
